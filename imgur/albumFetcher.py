@@ -11,6 +11,8 @@ from collections import Counter
 
 import log as log
 
+from service.spinnerService import SpinnerService
+
 log = logging.getLogger('my5t3ry.imFbAdapter.imgur.albumFetcher')
 
 
@@ -66,6 +68,8 @@ class AlbumFetcher:
         self.complete_callbacks.append(callback)
 
     def save_images(self, foldername=False):
+        spinner = SpinnerService()
+        spinner.start()
         if foldername:
             albumFolder = foldername
         else:
@@ -83,18 +87,16 @@ class AlbumFetcher:
             path = os.path.join(albumFolder, prefix + image[0] + image[1])
             for fn in self.image_callbacks:
                 fn(counter, image_url, path)
-            if os.path.isfile(path):
-                log.info("Skipping, already exists.")
-            else:
-                try:
-                    urllib.request.urlretrieve(image_url, path)
-                    log.info("Fetched:' " + image[0] + image[1])
-                except Exception as e:
-                    log.info("Download failed.")
-                    os.remove(path)
+
+            try:
+                urllib.request.urlretrieve(image_url, path)
+                log.info("Fetched:' " + image[0] + image[1])
+            except Exception as e:
+                log.info("Download failed.")
+                os.remove(path)
         for fn in self.complete_callbacks:
             fn()
-
+        spinner.stop()
 
 if __name__ == '__main__':
     args = sys.argv
