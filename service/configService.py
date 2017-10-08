@@ -18,8 +18,8 @@ class ConfigService:
         'loglevel': logging.DEBUG,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
         'tmpPicDir': './tmpDump/',
-        'facebookUser': 'sash@mischkonsum.org',
-        'facebookPass': 'Qicklink1',
+        'facebookUser': 'XXXXXX',
+        'facebookPass': 'XXXXXX',
         'postPath': 'me/photos',
         'accessToken': 'EAAEAavJWEMABAE5BigMEe7u8mXsXtvGg4jYX1xWxEk32ArJ2LVcDCPVFzXOUnEaCH2yjj1eKQvHMDmjLwg7FQIrJFPwTypbKVB5HjUdi7s2URZAuyzWDkiWl3vJfmz9Yf9oEottvAgoNzA0raxKndAXZB8x3kZBa4h7mTZCZAfIYVQzYaSWEf7ABqY85zZBtd6s9qwDWXaQgZDZD',
         'postMessages': [
