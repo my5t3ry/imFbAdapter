@@ -2,9 +2,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 
 class SchedulerService(object):
-    def __init__(self, config, task, intervall):
+    def __init__(self, config, task, interval):
         self.config = config
-        self.intervall = intervall
+        self.intervall = interval
         self.task = task
 
     def run(self):

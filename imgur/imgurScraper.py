@@ -2,6 +2,7 @@ from urllib.parse import urlparse, urlunparse
 
 import lxml as lxml
 import requests
+from lxml.html import parse, HTMLParser
 
 
 class ImgurScraper(object):
@@ -13,7 +14,7 @@ class ImgurScraper(object):
 
     def lxmldom(self, url):
         req = self.fetch(url)
-        parser = lxml.html.HTMLParser(encoding='utf-8',
+        parser = HTMLParser(encoding='utf-8',
                                       remove_pis=True,
                                       remove_comments=True,
                                       remove_blank_text=True)

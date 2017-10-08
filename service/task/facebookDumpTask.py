@@ -18,4 +18,5 @@ class FacebookDumpTask(object):
                 path=self.config.get("postPath"),
                 source=open(filePath, 'rb'),
                 message=random.choice(self.config.get("postMessages")))
-        pass
+
+    pass

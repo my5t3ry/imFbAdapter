@@ -2,6 +2,7 @@ import logging
 import math
 import os
 import re
+import ssl
 import sys
 import urllib.request, urllib.parse, urllib.error
 from collections import Counter
@@ -28,7 +29,8 @@ class AlbumFetcher:
         fullListURL = "http://imgur.com/gallery/" + self.album_key
 
         try:
-            self.response = urllib.request.urlopen(url=fullListURL)
+            context = ssl._create_unverified_context()
+            self.response = urllib.request.urlopen(url=fullListURL,context=context)
             response_code = self.response.getcode()
         except Exception as e:
             self.response = False
