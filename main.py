@@ -25,7 +25,7 @@ def init(args):
 
 def init_logging(config_service):
     log = logging.getLogger('my5t3ry.main')
-    logging.basicConfig(level=config_service.config.get("loglevel"))
+    logging.basicConfig(level=logging.INFO)
     output = term.format('=============================================      ', term.green) + term.format('imFbAdapter 0.1', term.blue, term.bold) + term.format('      =============================================\n\n ', term.green)
     term.writeLine(output)
     log.info("  === imgur root gallery: '" + str(config_service.config.get("rootImgurGallery")) + "' ===")
