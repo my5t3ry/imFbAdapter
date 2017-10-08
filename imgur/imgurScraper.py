@@ -1,6 +1,6 @@
-from urlparse import urlparse, urlunparse
+from urllib.parse import urlparse, urlunparse
 
-import lxml.html
+import lxml as lxml
 import requests
 
 

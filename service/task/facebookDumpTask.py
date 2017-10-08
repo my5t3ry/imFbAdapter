@@ -1,13 +1,15 @@
 import os
 import random
 
-from fb import GraphAPI
+from fb.graph_api import GraphAPI
 
 
 class FacebookDumpTask(object):
     def __init__(self, config_service):
         self.config = config_service
-        if len(os.listdir(self.config.get("tmpPicDir"))) > 0:
+
+    def do(self):
+        if len(os.listdir(self.config.get("tmpPicDir"))) > 1:
             file = random.choice(os.listdir(self.config.get("tmpPicDir")))
             filePath = os.path.join(self.config.get("tmpPicDir"), file)
             graph = GraphAPI(self.config.get("accessToken"))
@@ -16,5 +18,4 @@ class FacebookDumpTask(object):
                 path=self.config.get("postPath"),
                 source=open(filePath, 'rb'),
                 message=random.choice(self.config.get("postMessages")))
-
-            pass
+        pass

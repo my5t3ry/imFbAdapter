@@ -1,6 +1,7 @@
 import os
 
-from imgur import ImgurScraper, AlbumFetcher
+from imgur.albumFetcher import AlbumFetcher
+from imgur.imgurScraper import ImgurScraper
 
 
 class ImgurScraperTask(object):

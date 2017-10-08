@@ -3,7 +3,7 @@ import math
 import os
 import re
 import sys
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from collections import Counter
 
 
@@ -28,7 +28,7 @@ class AlbumFetcher:
         fullListURL = "http://imgur.com/gallery/" + self.album_key
 
         try:
-            self.response = urllib.urlopen(url=fullListURL)
+            self.response = urllib.request.urlopen(url=fullListURL)
             response_code = self.response.getcode()
         except Exception as e:
             self.response = False
@@ -82,7 +82,7 @@ class AlbumFetcher:
                 print ("Skipping, already exists.")
             else:
                 try:
-                    urllib.urlretrieve(image_url, path)
+                    urllib.request.urlretrieve(image_url, path)
                     log.info("Fetched:' " + image[0] + image[1])
                 except Exception as e:
                     print ("Download failed.")

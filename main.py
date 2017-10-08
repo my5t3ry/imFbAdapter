@@ -1,17 +1,16 @@
 import logging
 import sys
 import time
-from lib import Options
-from service import SchedulerService, ConfigService
-from service.task import ImgurScraperTask
+
+from service.configService import ConfigService
+from service.schedulerService import SchedulerService
 from service.task.facebookDumpTask import FacebookDumpTask
+from service.task.imgurScraperTask import ImgurScraperTask
 
 
 def init (args):
     config_service = ConfigService()
     initLogging(config_service)
-    options = Options()
-    options.parse(args[1:])
     imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config));
     facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config));
     imgur_scrape_scheduler.run()

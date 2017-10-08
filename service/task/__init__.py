@@ -1,2 +1,0 @@
-from abstractTask import AbstractTask
-from imgurScraperTask import ImgurScraperTask
