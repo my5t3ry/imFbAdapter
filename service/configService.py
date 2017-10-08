@@ -13,18 +13,18 @@ class ConfigService:
         'version': '0.1',
 
         'imgurScrapeInterval': 900,  # seconds
-        'facebookDumpInterval': 720,
+        'facebookDumpInterval': 40,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
         'loglevel': logging.DEBUG,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
         'tmpPicDir': './tmpDump/',
-        'facebookUser': 'XXXXX',
-        'facebookPass': 'XXXXX',
+        'facebookUser': 'sash@mischkonsum.org',
+        'facebookPass': 'Qicklink1',
         'postPath': 'me/photos',
-        'accessToken': 'EAACEdEose0cBAMvNDxhhZCbq0WWqTPVxhjnNg0D8XeSGwjkwpSjF577JGpVWVdLxduIbRqDAbkUITFb4MFhxaOfwZCjUcPvBjILftLhekiYYdZAuOqnHA3JkzLG8FfrgNyWhiHT6ixYjaRZBuI9sQKNDUW6RfFncffEnwFaiMXJvHWTPrTSqTOP5tiCigxB3LrZAhrgn6MgZDZD',
+        'accessToken': 'EAAEAavJWEMABAE5BigMEe7u8mXsXtvGg4jYX1xWxEk32ArJ2LVcDCPVFzXOUnEaCH2yjj1eKQvHMDmjLwg7FQIrJFPwTypbKVB5HjUdi7s2URZAuyzWDkiWl3vJfmz9Yf9oEottvAgoNzA0raxKndAXZB8x3kZBa4h7mTZCZAfIYVQzYaSWEf7ABqY85zZBtd6s9qwDWXaQgZDZD',
         'postMessages': [
-            "Sea impetus platonem ",
-            "impetus nec an ",
-            "haedrum et, eirmod",
+            "imgur x posting bot test -> ",
+            "imgur x posting bot test -> ",
+            "imgur x posting bot test ->",
         ]
     }
