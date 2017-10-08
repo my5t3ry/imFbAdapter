@@ -24,8 +24,8 @@ def init_logging(config_service):
     logging.basicConfig()
     log.setLevel(config_service.config.get("loglevel"))
     log.info("== imFbAdapter 0.1 ==")
-    log.info("imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "'")
-    log.info("facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "'")
+    log.info("== imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "' ==")
+    log.info("== facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "' ==")
     log.info("== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ==")
     log.info("== dump the shit away ==>")
 
