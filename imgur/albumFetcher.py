@@ -22,7 +22,6 @@ class FetchException(Exception):
 class AlbumFetcher:
     def __init__(self, album_url):
         self.album_url = album_url
-
         self.image_callbacks = []
         self.complete_callbacks = []
 
@@ -32,11 +31,11 @@ class AlbumFetcher:
 
         self.protocol = match.group(1)
         self.album_key = match.group(4)
-        fullListURL = "http://imgur.com/gallery/" + self.album_key
+        full_list_URL = "http://imgur.com/gallery/" + self.album_key
 
         try:
             context = ssl._create_unverified_context()
-            self.response = urllib.request.urlopen(url=fullListURL, context=context)
+            self.response = urllib.request.urlopen(url=full_list_URL, context=context)
             response_code = self.response.getcode()
         except Exception as e:
             self.response = False
