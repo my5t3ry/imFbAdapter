@@ -1,5 +1,8 @@
 import logging
+
 from apscheduler.scheduler import Scheduler, EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
+
+log = logging.getLogger('my5t3ry.imFbAdapter.service.ScheduleService')
 
 
 class SchedulerService(object):
@@ -22,6 +25,3 @@ class SchedulerService(object):
         self.job = self.task_thread.add_interval_job(self.task.do, seconds=new_interval)
         self.task_thread.start()
         pass
-
-
-log = logging.getLogger('my5t3ry.imFbAdapter.service.ScheduleService')

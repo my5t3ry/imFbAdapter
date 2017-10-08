@@ -4,6 +4,8 @@ import random
 
 from fb.graph_api import GraphAPI
 
+log = logging.getLogger('my5t3ry.imFbAdapter.service.FacebookDumpTask')
+
 
 class FacebookDumpTask(object):
     def __init__(self, config_service):
@@ -29,7 +31,3 @@ class FacebookDumpTask(object):
         else:
             return self.config.get("facebookDumpInterval")
         pass
-
-
-log = logging.getLogger('my5t3ry.imFbAdapter.service.FacebookDumpTask')
-
