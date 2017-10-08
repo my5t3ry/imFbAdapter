@@ -84,7 +84,7 @@ class AlbumFetcher:
             for fn in self.image_callbacks:
                 fn(counter, image_url, path)
             if os.path.isfile(path):
-                print("Skipping, already exists.")
+                log.info("Skipping, already exists.")
             else:
                 try:
                     urllib.request.urlretrieve(image_url, path)
