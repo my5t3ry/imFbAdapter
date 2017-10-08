@@ -9,7 +9,7 @@ class ConfigService:
         return self.config
 
     config = {
-        'imgurScrapeInterval': 3600,
+        'imgurScrapeInterval': 5,
         'facebookDumpInterval': 1000,
         'author_email': 'sascha.bast@gmail.com',
         'version': '0.1',

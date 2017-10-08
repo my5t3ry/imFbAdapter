@@ -11,8 +11,8 @@ from service.task.imgurScraperTask import ImgurScraperTask
 def init (args):
     config_service = ConfigService()
     initLogging(config_service)
-    imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config));
-    facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config));
+    imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config), config_service.config.get("facebookDumpInterval"))
+    facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config), config_service.config.get("imgurScrapeInterval"));
     imgur_scrape_scheduler.run()
     facebook_dump_scheduler.run()
     while True:

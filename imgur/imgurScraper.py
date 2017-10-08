@@ -4,15 +4,14 @@ import lxml as lxml
 import requests
 
 
-
 class ImgurScraper(object):
-    def fetch(self,url, user_agent="Copypasta", headers=None):
+    def fetch(self, url, user_agent="Copypasta", headers=None):
         if not headers:
             headers = {"User-Agent": user_agent}
         req = requests.get(url, headers=headers)
         return req
 
-    def lxmldom(self,url):
+    def lxmldom(self, url):
         req = self.fetch(url)
         parser = lxml.html.HTMLParser(encoding='utf-8',
                                       remove_pis=True,
@@ -22,7 +21,7 @@ class ImgurScraper(object):
         dom.make_links_absolute(url)
         return dom
 
-    def imgur_urls(self,url):
+    def imgur_urls(self, url):
 
         scheme, domain, path, param, query, fragment = urlparse(url)
         if domain == "i.imgur.com":
