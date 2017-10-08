@@ -67,11 +67,11 @@ class AlbumFetcher:
     def on_complete(self, callback):
         self.complete_callbacks.append(callback)
 
-    def save_images(self, foldername=False):
+    def save_images(self, folder_name=False):
         spinner = SpinnerService()
         spinner.start()
-        if foldername:
-            albumFolder = foldername
+        if folder_name:
+            albumFolder = folder_name
         else:
             albumFolder = self.album_key
 
