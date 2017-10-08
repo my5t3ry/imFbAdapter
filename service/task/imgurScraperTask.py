@@ -1,5 +1,3 @@
-import os
-
 from imgur.albumFetcher import AlbumFetcher
 from imgur.imgurScraper import ImgurScraper
 

@@ -1,3 +1,4 @@
+import logging
 import os
 import random
 
@@ -18,5 +19,9 @@ class FacebookDumpTask(object):
                 path=self.config.get("postPath"),
                 source=open(filePath, 'rb'),
                 message=random.choice(self.config.get("postMessages")))
+            log.info("posted file: '" + file + "'")
 
     pass
+
+
+log = logging.getLogger('my5t3ry.imFbAdapter.imgur.albumFetcher')
