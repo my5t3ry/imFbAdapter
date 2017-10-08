@@ -68,8 +68,7 @@ class AlbumFetcher:
         self.complete_callbacks.append(callback)
 
     def save_images(self, folder_name=False):
-        spinner = SpinnerService()
-        spinner.start()
+
         if folder_name:
             albumFolder = folder_name
         else:
@@ -96,7 +95,6 @@ class AlbumFetcher:
                 os.remove(path)
         for fn in self.complete_callbacks:
             fn()
-        spinner.stop()
 
 if __name__ == '__main__':
     args = sys.argv
