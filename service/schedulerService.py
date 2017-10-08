@@ -1,4 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 
 
 class SchedulerService(object):
@@ -9,5 +10,6 @@ class SchedulerService(object):
 
     def run(self):
         apsched = BackgroundScheduler()
-        apsched.add_job(self.task.do, 'interval', seconds=self.intervall)
+        trigger = IntervalTrigger(seconds=self.intervall)
+        apsched.add_job(self.task.do, trigger)
         apsched.start()
