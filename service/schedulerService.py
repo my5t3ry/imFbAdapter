@@ -25,4 +25,3 @@ class SchedulerService(object):
         new_interval = self.task.get_new_interval()
         log.debug("=== interval for job:'" + str(self.task) + "' set to :'" + str(new_interval) + "'===")
         self.job = self.task_thread.add_interval_job(self.task.do, seconds=new_interval)
-        pass

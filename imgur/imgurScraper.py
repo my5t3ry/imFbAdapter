@@ -1,10 +1,10 @@
 from urllib.parse import urlparse, urlunparse
-
 import lxml as lxml
-import os
 import requests
-import term
 from lxml.html import parse, HTMLParser
+
+imgur_img_xpath = "//a[@class='image-list-link']/@href"
+
 
 
 class ImgurScraper(object):
@@ -47,8 +47,3 @@ class ImgurScraper(object):
 
 
 
-
-    pass
-
-
-imgur_img_xpath = "//a[@class='image-list-link']/@href"
