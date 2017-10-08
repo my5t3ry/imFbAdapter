@@ -12,8 +12,8 @@ class ConfigService:
         'author_email': 'sascha.bast@gmail.com',
         'version': '0.1',
 
-        'imgurScrapeInterval': 900,  # seconds
-        'facebookDumpInterval': 720,
+        'imgurScrapeInterval': 10,  # seconds
+        'facebookDumpInterval': 20,
         'enableRandomFacebookPostingInterval': False,
         'minFacebookPostingInterval': 20,
         'maxFacebookPostingInterval': 40,
