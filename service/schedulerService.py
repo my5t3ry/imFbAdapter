@@ -19,7 +19,7 @@ class SchedulerService(object):
             self.task_thread.unschedule_job(event.job)
             self.task_thread.shutdown(wait=False)
         new_interval = self.task.get_new_interval()
-        log.debu("=== interval for job:'" + str(self.task) + "' set to :'" + str(new_interval) + "'===")
+        log.debug("=== interval for job:'" + str(self.task) + "' set to :'" + str(new_interval) + "'===")
         self.job = self.task_thread.add_interval_job(self.task.do, seconds=new_interval)
         self.task_thread.start()
         pass

@@ -14,7 +14,7 @@ class ConfigService:
 
         'imgurScrapeInterval': 900,  # seconds
         'facebookDumpInterval': 720,
-        'enableRandomFacebookPostingInterval': True,
+        'enableRandomFacebookPostingInterval': False,
         'minFacebookPostingInterval': 20,
         'maxFacebookPostingInterval': 40,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
