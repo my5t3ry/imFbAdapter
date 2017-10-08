@@ -44,7 +44,7 @@ class FacebookDumpTask(object):
             self.graph.get(self.config.get("postPath"))
             term.writeLine('OK', term.green)
         except:
-            term.writeLine('Facebook credentials and/or auth_token invalid. No facebook posts possible check => https://developers.facebook.com/tools/accesstoken/', term.red)
+            term.writeLine('Facebook credentials and/or auth_token invalid. No facebook posts possible. Check => https://developers.facebook.com/tools/accesstoken/', term.red)
     pass
 
     def get_new_interval(self):
