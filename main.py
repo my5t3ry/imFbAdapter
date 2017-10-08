@@ -1,21 +1,17 @@
 import logging
 import sys
-
 import time
-
 from lib import Options
 from service import SchedulerService, ConfigService
 from service.task import ImgurScraperTask
 from service.task.facebookDumpTask import FacebookDumpTask
 
 
-
-def init(args):
+def init (args):
     config_service = ConfigService()
     initLogging(config_service)
     options = Options()
     options.parse(args[1:])
-
     imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config));
     facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config));
     imgur_scrape_scheduler.run()
@@ -28,7 +24,6 @@ def initLogging(config_service):
     log = logging.getLogger('apscheduler.executors.default')
     logging.basicConfig()
     log.setLevel(config_service.config.get("loglevel"))
-    fmt = logging.Formatter('%(levelname)s:%(name)s:%(message)s')
     log.info("== imFbAdapter 0.1 ==")
     log.info("imgur scrape interval config:'" + str(config_service.config.get("imgurScrapeInterval")) + "'")
     log.info("facebook dump interval config:'" + str(config_service.config.get("facebookDumpInterval")) + "'")
