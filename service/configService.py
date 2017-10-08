@@ -17,7 +17,6 @@ class ConfigService:
         'enableRandomFacebookPostingInterval': False,
         'minFacebookPostingInterval': 20,
         'maxFacebookPostingInterval': 40,
-        'imgurURL': 'https://imgur.com/gallery/hot/viral/',
         'loglevel': logging.INFO,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
         'tmpPicDir': './tmpDump/',

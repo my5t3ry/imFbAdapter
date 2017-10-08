@@ -29,7 +29,6 @@ class FacebookDumpTask(object):
                 log.info("posted file: '" + file + "'")
             except:
                 log.info("\n\n\n\n=== facebook post failed! auth_token is expired please check https://developers.facebook.com/tools/accesstoken/ an obtain long term token ===\n\n\n\n")
-
     pass
 
     def init_graph_api(self, auth_token):
@@ -39,12 +38,12 @@ class FacebookDumpTask(object):
 
     def validate(self):
         term.writeLine('Validating Facebook credentials...', term.green)
-
         try:
             self.graph.get(self.config.get("postPath"))
             term.writeLine('OK', term.green)
         except:
             term.writeLine('Facebook credentials and/or auth_token invalid. No facebook posts possible. Check => https://developers.facebook.com/tools/accesstoken/', term.red)
+
     pass
 
     def get_new_interval(self):
