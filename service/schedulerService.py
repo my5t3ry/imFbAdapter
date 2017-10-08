@@ -10,6 +10,7 @@ class SchedulerService(object):
         self.config = config
         self.task = task
         self.task_thread = Scheduler()
+        self.job = None
 
     def run(self):
         self.task_thread.add_listener(self.reconfigure_interval, EVENT_JOB_EXECUTED)
