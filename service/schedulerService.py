@@ -1,5 +1,4 @@
 import logging
-
 from apscheduler.scheduler import Scheduler, EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 

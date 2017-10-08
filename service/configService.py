@@ -1,6 +1,5 @@
 import logging
 
-
 class ConfigService:
     def __init__(self):
         pass
