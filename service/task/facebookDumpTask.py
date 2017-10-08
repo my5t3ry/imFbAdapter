@@ -15,11 +15,11 @@ class FacebookDumpTask(object):
             filePath = os.path.join(self.config.get("tmpPicDir"), file)
             graph = GraphAPI(self.config.get("accessToken"))
             graph.get(self.config.get("postPath"))
+            log.info("posted file: '" + file + "'")
             graph.post(
                 path=self.config.get("postPath"),
                 source=open(filePath, 'rb'),
                 message=random.choice(self.config.get("postMessages")))
-            log.info("posted file: '" + file + "'")
 
     pass
 
