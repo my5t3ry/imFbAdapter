@@ -9,10 +9,11 @@ class ConfigService:
         return self.config
 
     config = {
-        'imgurScrapeInterval': 900,  #seconds
-        'facebookDumpInterval': 720,
         'author_email': 'sascha.bast@gmail.com',
         'version': '0.1',
+
+        'imgurScrapeInterval': 900,  #seconds
+        'facebookDumpInterval': 720,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
         'loglevel': logging.DEBUG,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
