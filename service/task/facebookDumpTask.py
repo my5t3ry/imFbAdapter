@@ -1,7 +1,6 @@
 import logging
 import os
 import random
-
 from fb.graph_api import GraphAPI
 
 log = logging.getLogger('my5t3ry.imFbAdapter.service.FacebookDumpTask')
@@ -22,7 +21,6 @@ class FacebookDumpTask(object):
                 path=self.config.get("postPath"),
                 source=open(file_path, 'rb'),
                 message=random.choice(self.config.get("postMessages")))
-
     pass
 
     def get_new_interval(self):

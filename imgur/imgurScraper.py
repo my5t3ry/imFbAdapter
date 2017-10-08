@@ -1,5 +1,4 @@
 from urllib.parse import urlparse, urlunparse
-
 import lxml as lxml
 import requests
 from lxml.html import parse, HTMLParser
