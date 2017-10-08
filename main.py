@@ -1,9 +1,6 @@
 import logging
-import ssl
 import sys
 import time
-import urllib
-
 from service.configService import ConfigService
 from service.schedulerService import SchedulerService
 from service.task.facebookDumpTask import FacebookDumpTask
