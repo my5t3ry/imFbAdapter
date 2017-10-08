@@ -22,8 +22,9 @@ def init(args):
 def init_logging(config_service):
     log = logging.getLogger('my5t3ry.main')
     logging.basicConfig(level=config_service.config.get("loglevel"))
-    log.info("=== imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "' ===")
-    log.info("=== facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "' ===")
+    log.info("=== imgur root gallery: '" + str(config_service.config.get("rootImgurGallery")) + "' ===")
+    log.info("=== facebook user: '" + str(config_service.config.get("facebookUser")) + "' ===")
+    log.info("=== facebook post path: '" + str(config_service.config.get("postPath")) + "' ===")
     log.info("=== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ===")
     log.info("=== dump the shit away ===>\n\n")
 
