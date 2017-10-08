@@ -1,5 +1,6 @@
 import logging
 
+
 class ConfigService:
     def __init__(self):
         pass
@@ -11,7 +12,7 @@ class ConfigService:
         'author_email': 'sascha.bast@gmail.com',
         'version': '0.1',
 
-        'imgurScrapeInterval': 900,  #seconds
+        'imgurScrapeInterval': 900,  # seconds
         'facebookDumpInterval': 720,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
         'loglevel': logging.DEBUG,

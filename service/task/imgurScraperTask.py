@@ -7,8 +7,8 @@ class ImgurScraperTask(object):
         self.config = config_service
 
     def do(self):
-        iscraper = ImgurScraper()
-        galleryLinks = iscraper.imgur_urls(self.config.get("rootImgurGallery"))
+        imgur_scraper = ImgurScraper()
+        galleryLinks = imgur_scraper.imgur_urls(self.config.get("rootImgurGallery"))
         for galleryLink in galleryLinks:
             album_fetcher = AlbumFetcher(galleryLink)
             album_fetcher.save_images(self.config.get("tmpPicDir"))
