@@ -25,7 +25,7 @@ def init_logging(config_service):
     log.info("=== imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "' ===")
     log.info("=== facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "' ===")
     log.info("=== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ===")
-    log.info("=== dump the shit away ===>")
+    log.info("=== dump the shit away ===>\n\n")
 
 
 if __name__ == '__main__':
