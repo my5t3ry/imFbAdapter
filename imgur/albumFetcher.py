@@ -76,7 +76,6 @@ class AlbumFetcher:
 
         for (counter, image) in enumerate(self.imageIDs, start=1):
             image_url = "http://i.imgur.com/" + image[0] + image[1]
-
             prefix = "%0*d-" % (
                 int(math.ceil(math.log(len(self.imageIDs) + 1, 10))),
                 counter
@@ -84,7 +83,6 @@ class AlbumFetcher:
             path = os.path.join(albumFolder, prefix + image[0] + image[1])
             for fn in self.image_callbacks:
                 fn(counter, image_url, path)
-
             if os.path.isfile(path):
                 print("Skipping, already exists.")
             else:

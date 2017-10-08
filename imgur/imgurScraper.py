@@ -22,7 +22,6 @@ class ImgurScraper(object):
         return dom
 
     def imgur_urls(self, url):
-
         scheme, domain, path, param, query, fragment = urlparse(url)
         if domain == "i.imgur.com":
             return [url]
