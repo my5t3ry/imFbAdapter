@@ -14,8 +14,11 @@ class ConfigService:
 
         'imgurScrapeInterval': 900,  # seconds
         'facebookDumpInterval': 720,
+        'enableRandomFacebookPostingInterval': True,
+        'minFacebookPostingInterval': 20,
+        'maxFacebookPostingInterval': 40,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
-        'loglevel': logging.DEBUG,
+        'loglevel': logging.INFO,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
         'tmpPicDir': './tmpDump/',
         'facebookUser': 'XXXXXX',

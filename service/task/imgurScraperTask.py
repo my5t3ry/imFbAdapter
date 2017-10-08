@@ -14,3 +14,7 @@ class ImgurScraperTask(object):
             album_fetcher.save_images(self.config.get("tmpPicDir"))
     pass
 
+    def get_new_interval(self):
+        return self.config.get("imgurScrapeInterval")
+        pass
+

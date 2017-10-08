@@ -11,8 +11,8 @@ from service.task.imgurScraperTask import ImgurScraperTask
 def init(args):
     config_service = ConfigService()
     init_logging(config_service)
-    imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config), config_service.config.get("imgurScrapeInterval"))
-    facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config), config_service.config.get("facebookDumpInterval"));
+    imgur_scrape_scheduler = SchedulerService(config_service.config, ImgurScraperTask(config_service.config))
+    facebook_dump_scheduler = SchedulerService(config_service.config, FacebookDumpTask(config_service.config))
     imgur_scrape_scheduler.run()
     facebook_dump_scheduler.run()
     while True:
@@ -20,14 +20,12 @@ def init(args):
 
 
 def init_logging(config_service):
-    log = logging.getLogger('apscheduler.executors.default')
-    logging.basicConfig()
-    log.setLevel(config_service.config.get("loglevel"))
-    log.info("== imFbAdapter 0.1 ==")
-    log.info("== imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "' ==")
-    log.info("== facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "' ==")
-    log.info("== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ==")
-    log.info("== dump the shit away ==>")
+    log = logging.getLogger('my5t3ry.main')
+    logging.basicConfig(level=config_service.config.get("loglevel"))
+    log.info("=== imgur scrape interval config: '" + str(config_service.config.get("imgurScrapeInterval")) + "' ===")
+    log.info("=== facebook dump interval config: '" + str(config_service.config.get("facebookDumpInterval")) + "' ===")
+    log.info("=== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ===")
+    log.info("=== dump the shit away ===>")
 
 
 if __name__ == '__main__':

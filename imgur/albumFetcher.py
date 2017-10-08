@@ -6,6 +6,7 @@ import ssl
 import sys
 import urllib.request, urllib.parse, urllib.error
 from collections import Counter
+import log as log
 
 
 class FetchException(Exception):
@@ -87,7 +88,7 @@ class AlbumFetcher:
                     urllib.request.urlretrieve(image_url, path)
                     log.info("Fetched:' " + image[0] + image[1])
                 except Exception as e:
-                    print ("Download failed.")
+                    log.info("Download failed.")
                     os.remove(path)
         for fn in self.complete_callbacks:
             fn()
@@ -99,15 +100,15 @@ if __name__ == '__main__':
 
     try:
         downloader = AlbumFetcher(args[1])
-        print(("Found {0} images in album".format(downloader.num_images())))
+        log.info(("Found {0} images in album".format(downloader.num_images())))
 
         for i in downloader.list_extensions():
-            print(("Found {0} files with {1} extension".format(i[1], i[0])))
+            log.info(("Found {0} files with {1} extension".format(i[1], i[0])))
 
 
         def print_image_progress(index, url, dest):
-            print(("Downloading Image %d" % index))
-            print(("    %s >> %s" % (url, dest)))
+            log.info(("Downloading Image %d" % index))
+            log.info(("    %s >> %s" % (url, dest)))
 
 
         downloader.on_image_download(print_image_progress)
@@ -127,9 +128,16 @@ if __name__ == '__main__':
         exit()
 
     except FetchException as e:
-        print(("Error: " + e.msg))
+        log.info(("Error: " + e.msg))
         print ("")
         print ("How to use")
         print ("=============")
         exit(1)
+
+
+
+
+
 log = logging.getLogger('my5t3ry.imFbAdapter.imgur.albumFetcher')
+
+
