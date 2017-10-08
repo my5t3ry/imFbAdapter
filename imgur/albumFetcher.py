@@ -4,9 +4,14 @@ import os
 import re
 import ssl
 import sys
-import urllib.request, urllib.parse, urllib.error
+import urllib.error
+import urllib.parse
+import urllib.request
 from collections import Counter
+
 import log as log
+
+log = logging.getLogger('my5t3ry.imFbAdapter.imgur.albumFetcher')
 
 
 class FetchException(Exception):
@@ -31,7 +36,7 @@ class AlbumFetcher:
 
         try:
             context = ssl._create_unverified_context()
-            self.response = urllib.request.urlopen(url=fullListURL,context=context)
+            self.response = urllib.request.urlopen(url=fullListURL, context=context)
             response_code = self.response.getcode()
         except Exception as e:
             self.response = False
@@ -82,7 +87,7 @@ class AlbumFetcher:
                 fn(counter, image_url, path)
 
             if os.path.isfile(path):
-                print ("Skipping, already exists.")
+                print("Skipping, already exists.")
             else:
                 try:
                     urllib.request.urlretrieve(image_url, path)
@@ -92,6 +97,7 @@ class AlbumFetcher:
                     os.remove(path)
         for fn in self.complete_callbacks:
             fn()
+
 
 if __name__ == '__main__':
     args = sys.argv
@@ -115,8 +121,8 @@ if __name__ == '__main__':
 
 
         def all_done():
-            print ("")
-            print ("Done!")
+            print("")
+            print("Done!")
 
 
         downloader.on_complete(all_done)
@@ -129,15 +135,7 @@ if __name__ == '__main__':
 
     except FetchException as e:
         log.info(("Error: " + e.msg))
-        print ("")
-        print ("How to use")
-        print ("=============")
+        print("")
+        print("How to use")
+        print("=============")
         exit(1)
-
-
-
-
-
-log = logging.getLogger('my5t3ry.imFbAdapter.imgur.albumFetcher')
-
-
