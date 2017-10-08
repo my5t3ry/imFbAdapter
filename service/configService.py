@@ -13,7 +13,7 @@ class ConfigService:
         'version': '0.1',
 
         'imgurScrapeInterval': 900,  # seconds
-        'facebookDumpInterval': 40,
+        'facebookDumpInterval': 720,
         'imgurURL': 'https://imgur.com/gallery/hot/viral/',
         'loglevel': logging.DEBUG,
         'rootImgurGallery': "https://imgur.com/gallery/hot/viral/",
@@ -23,8 +23,8 @@ class ConfigService:
         'postPath': 'me/photos',
         'accessToken': 'EAAEAavJWEMABAE5BigMEe7u8mXsXtvGg4jYX1xWxEk32ArJ2LVcDCPVFzXOUnEaCH2yjj1eKQvHMDmjLwg7FQIrJFPwTypbKVB5HjUdi7s2URZAuyzWDkiWl3vJfmz9Yf9oEottvAgoNzA0raxKndAXZB8x3kZBa4h7mTZCZAfIYVQzYaSWEf7ABqY85zZBtd6s9qwDWXaQgZDZD',
         'postMessages': [
-            "imgur x posting bot test -> ",
-            "imgur x posting bot test -> ",
-            "imgur x posting bot test ->",
+            "imgur x posting bot test -> a",
+            "imgur x posting bot test -> b",
+            "imgur x posting bot test -> c",
         ]
     }
