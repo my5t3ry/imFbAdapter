@@ -2,6 +2,9 @@ import logging
 import sys
 import time
 import os
+
+import term
+
 from service.configService import ConfigService
 from service.schedulerService import SchedulerService
 from service.task.facebookDumpTask import FacebookDumpTask
@@ -22,11 +25,15 @@ def init(args):
 def init_logging(config_service):
     log = logging.getLogger('my5t3ry.main')
     logging.basicConfig(level=config_service.config.get("loglevel"))
+    output = term.format('=============================================    ', term.green) + term.format('imFbAdapter 0.1', term.blue, term.bold)  +term.format('      =============================================\n\n ', term.green)
+    term.writeLine(output)
     log.info("=== imgur root gallery: '" + str(config_service.config.get("rootImgurGallery")) + "' ===")
     log.info("=== facebook user: '" + str(config_service.config.get("facebookUser")) + "' ===")
     log.info("=== facebook post path: '" + str(config_service.config.get("postPath")) + "' ===")
     log.info("=== current pile consists of '" + str(len(os.listdir(config_service.config.get("tmpPicDir"))))+ "' items ===")
+    log.info("=== press ctrl + D to shutdown threads ===>")
     log.info("=== dump the shit away ===>\n\n")
+
 
 
 if __name__ == '__main__':
