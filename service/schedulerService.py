@@ -13,6 +13,7 @@ class SchedulerService(object):
         self.job = None
 
     def run(self):
+        self.task.validate();
         self.task_thread.add_listener(self.reconfigure_interval, EVENT_JOB_EXECUTED)
         self.task_thread.add_listener(self.reconfigure_interval, EVENT_JOB_ERROR)
         self.task_thread.start()
