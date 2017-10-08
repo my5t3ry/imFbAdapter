@@ -8,8 +8,8 @@ class ImgurScraperTask(object):
 
     def do(self):
         imgur_scraper = ImgurScraper()
-        galleryLinks = imgur_scraper.imgur_urls(self.config.get("rootImgurGallery"))
-        for galleryLink in galleryLinks:
+        gallery_links = imgur_scraper.imgur_urls(self.config.get("rootImgurGallery"))
+        for galleryLink in gallery_links:
             album_fetcher = AlbumFetcher(galleryLink)
             album_fetcher.save_images(self.config.get("tmpPicDir"))
     pass
